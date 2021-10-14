@@ -16,7 +16,7 @@ buildscript {
 ext{
 
     minSDK = 21
-    targetSDK = 31
+    targetSDK = 30
 
     versionCodeMajor = 0
     versionCodeMinor = 1
