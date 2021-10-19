@@ -40,7 +40,7 @@ jobs:
 
   apk:
     needs: [build,test]
-    name: Generate APK
+    name: Generate APK Debug
     runs-on: ubuntu-latest
 
     steps:
