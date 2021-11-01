@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    name : Build Project
+    name: Build Project
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -38,8 +38,27 @@ jobs:
       - name: Unit tests
         run: bash ./gradlew test --stacktrace
 
+  fast_lane_test:
+    needs: [ build,test ]
+    name: Test with fastlane
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+            ruby-version: '2.7.2'
+
+      - name: Setup Fastlane
+        run: bundle install
+      - name : run fastlane test
+        run : bundle exec fastlane test
+
   apk:
-    needs: [build,test]
+    needs: [ build,test ]
     name: Generate APK Debug
     runs-on: ubuntu-latest
 

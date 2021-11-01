@@ -31,6 +31,11 @@ Submit a new Beta Build to Crashlytics Beta
 fastlane android deploy
 ```
 Deploy a new version to the Google Play
+### android debug
+```
+fastlane android debug
+```
+Build a debug APK
 
 ----
 
