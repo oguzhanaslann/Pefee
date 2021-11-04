@@ -58,7 +58,7 @@ jobs:
         run : bundle exec fastlane test
 
   apk:
-    needs: [ build,test ]
+    needs: [ build,test,fast_lane_test ]
     name: Generate APK Debug
     runs-on: ubuntu-latest
 
